@@ -1,12 +1,13 @@
 package pl.biomechanika.formularz;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
 
-    private MailService mailService;
+    private final MailService mailService;
 
     public MainController(MailService mailService) {
         this.mailService = mailService;
@@ -26,5 +27,13 @@ public class MainController {
     public String kontakt() {
         return "kontakt";
     }
+
+    @PostMapping("/send")
+    @ResponseBody
+    public String composeMail(String senderName, String senderMail, String messageText) {
+        mailService.sendMail("antmaster@byom.de", senderName, messageText);
+        return "You sent email.";
+    }
+
 
 }
