@@ -3,14 +3,34 @@
       layout:decorate="~{layout.html}">
 
 <head>
-  <title>Kontakt</title>
+    <title>Kontakt</title>
 </head>
 
 <body>
 <section layout:fragment="content">
+    <h1>Wysyłanie maila:</h1>
+    <form method="post">
+        <table border="0" width="80%">
+            <tr>
+                <td>Do:</td>
+                <td><input type="text" name="recipient" size="55"/></td>
+            </tr>
+            <tr>
+                <td>Temat:</td>
+                <td><input type="text" name="subject" size="55"/></td>
+            </tr>
+            <tr>
+                <td>Treść:</td>
+                <td><textarea cols="50" rows="10" name="message"></textarea></td>
+            </tr>
 
-
-
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Wyślij E-mail"/>
+                </td>
+            </tr>
+        </table>
+    </form>
 </section>
 </body>
 </html>
