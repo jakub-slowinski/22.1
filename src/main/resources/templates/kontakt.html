@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout.html}">
+<html lang="pl" xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}"
+      xmlns:th="https://www.thymeleaf.org">
 
 <head>
-  <title>Kontakt</title>
+    <title>Kontakt</title>
 </head>
 
 <body>
 <section layout:fragment="content">
+    <h1>Wysyłanie maila:</h1>
+    <form method="post">
+        <table border="0" width="80%">
+            <tr>
+                <td>Temat:</td>
+                <td><input type="text" name="subject" placeholder="Temat wiadomości" size="55"/></td>
+            </tr>
+            <tr>
+                <td>Twoja ksywka:</td>
+                <td><input type="text" name="senderName" placeholder="Imię i nazwisko" size="55"/></td>
+            </tr>
+            <tr>
+                <td>Twój e-mail:</td>
+                <td><input type="mail" name="senderMail" placeholder="Twój adres email" size="55"/></td>
+            </tr>
+            <tr>
+                <td>Treść:</td>
+                <td><textarea cols="50" rows="10" name="messageText" placeholder="Twoja wiadomość do nas"></textarea></td>
+            </tr>
 
-
-
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Wyślij E-mail"/>
+                </td>
+            </tr>
+        </table>
+    </form>
 </section>
 </body>
 </html>

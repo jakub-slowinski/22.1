@@ -1,6 +1,5 @@
 package pl.biomechanika.formularz;
 
-import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MailService {
 
-    private JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
 
     public MailService(JavaMailSender javaMailSender) {
         this.javaMailSender = javaMailSender;
@@ -23,7 +22,6 @@ public class MailService {
         mail.setText(content);
 
         javaMailSender.send(mail);
-
 
     }
 }

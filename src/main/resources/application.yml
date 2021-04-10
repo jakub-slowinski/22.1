@@ -3,8 +3,8 @@ spring:
     host: poczta.interia.pl
     port: 465
     username: janektester@interia.pl
-    password: !ambdA#1981
-    properties.mail.smtp.auth: true
-    properties.mail.smtp.ssl.enable: true
-    properties.mail.smtp.starttls.enable: true
-
+    password: "kuba1981"
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.ssl.enable: true
+      mail.smtp.starttls.enable: true
